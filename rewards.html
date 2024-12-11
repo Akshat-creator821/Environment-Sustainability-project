@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reward Section</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Reward Section</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rewards.html">Rewards</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="rewards">
+            <h2>Enter Your Points to See Your Reward</h2>
+            <input type="number" id="pointsInput" placeholder="Enter your points" />
+            <button onclick="checkReward()">Check Reward</button>
+            <p id="rewardMessage"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Environmental Sustainability</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        function checkReward() {
+            const points = parseInt(document.getElementById('pointsInput').value);
+            let rewardMessage = '';
+            if (points > 400) {
+                rewardMessage = 'You get an Oreo Shake!';
+            } else if (points <= 400 && points >= 300) {
+                rewardMessage = 'You get a Drawing Book worth Rs. 40';
+            } else if (points < 300 && points >= 200) {
+                rewardMessage = 'You get Drawing Pencils';
+            } else if (points < 200 && points >= 100) {
+                rewardMessage = 'You get a Notebook';
+            } else {
+                rewardMessage = 'You get a Pen';
+            }
+            document.getElementById('rewardMessage').textContent = rewardMessage;
+        }
+    </script>
+</body>
+</html>
+
